@@ -34,7 +34,7 @@ export default class App extends Vue {
 body {
   background-image: url(@/assets/pic.jpg);
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100%;
 }
 
 #app {
@@ -55,8 +55,8 @@ body {
   height: 400px;
   margin-left: 25%;
   overflow: scroll;
-  background-attachment: scroll;
-  background-repeat: auto;
+  box-sizing: padding-box;
+
   .container {
     display: flex;
     justify-content: center;
@@ -70,11 +70,11 @@ body {
     margin-top: 0%;
   }
   .footer {
-    margin: 0%;
+    margin-top: 10%;
     bottom: 0;
   }
   .contact-div {
-    width: 100%;
+    width: 30%;
   }
 }
 
@@ -85,6 +85,12 @@ body {
     overflow: auto;
     background-attachment: fixed;
     background-repeat: auto;
+  }
+  .footer {
+    margin-top: 0%;
+  }
+  .contact-div {
+    width: 50%;
   }
 }
 </style>

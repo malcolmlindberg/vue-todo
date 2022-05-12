@@ -12,7 +12,9 @@
         {{ todo.description }}
         <div class="btn-div">
           <input type="checkbox" v-model="todo.complete" class="complete" />
-          <button class="delete-btn" @click="remove(index)">X</button>
+          <button class="delete-btn" @click="remove(index)">
+            <i class="gg-close"></i>
+          </button>
         </div>
       </li>
     </ul>
@@ -58,7 +60,7 @@ export default class TodoContainer extends Vue {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Bangers&family=Bebas+Neue&family=Indie+Flower&family=Inter:wght@400;600&family=Josefin+Sans:wght@100&family=Patrick+Hand&family=Permanent+Marker&display=swap");
-
+@import url("https://css.gg/close.css");
 ul {
   flex-grow: 1;
   padding: 10px;
@@ -76,7 +78,6 @@ ul {
   margin-top: 10px;
   color: black;
   background-color: white;
-  background-attachment: scroll;
   font-size: 1.2rem;
 }
 
@@ -86,7 +87,7 @@ ul {
   justify-content: flex-end;
   color: black;
 }
-.complete {
+li.complete {
   text-decoration: line-through;
   opacity: 0.8;
 }
@@ -96,9 +97,10 @@ input.complete {
   cursor: pointer;
 }
 .delete-btn {
-  width: 20px;
-  height: 20px;
+  border: none;
   background-color: white;
+  transition: 0.3s ease;
+  height: 20px;
   cursor: pointer;
   &:hover {
     background-color: black;

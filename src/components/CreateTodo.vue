@@ -52,6 +52,7 @@ export default class CreateTodo extends Vue {
   background-color: white;
   padding: 2px;
   font-size: 1.2rem;
+  transition: 0.3s ease;
 
   cursor: pointer;
   &:hover {
