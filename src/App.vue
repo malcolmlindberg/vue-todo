@@ -1,17 +1,27 @@
 <template>
   <TodoContainer />
+  <Footer :contact="me" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import Footer from "./components/Footer.vue";
 import TodoContainer from "./components/TodoContainer.vue";
+import { Contact } from "./Models/Contact";
 
 @Options({
   components: {
     TodoContainer,
+    Footer,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  me: Contact = new Contact(
+    "Malcolm Lindberg",
+    29291821728,
+    "Malcolm.lindberg@hotmail.se"
+  );
+}
 </script>
 
 <style lang="scss">
@@ -24,6 +34,11 @@ export default class App extends Vue {}
 body {
   background-image: url(@/assets/pic.jpg);
   background-repeat: no-repeat;
+  height: 100vh;
+}
+
+#app {
+  height: 100vh;
 }
 
 .main {
@@ -42,10 +57,34 @@ body {
   overflow: scroll;
   background-attachment: scroll;
   background-repeat: auto;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+@media screen and (max-width: 1024px) {
+  .main {
+    height: 80%;
+    margin-top: 0%;
+  }
+  .footer {
+    margin: 0%;
+    bottom: 0;
+  }
+  .contact-div {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .main {
+    width: 100%;
+    margin: 0%;
+    overflow: auto;
+    background-attachment: fixed;
+    background-repeat: auto;
+  }
 }
 </style>

@@ -24,6 +24,7 @@ import { Options, Vue } from "vue-class-component";
 import CreateTodo from "./CreateTodo.vue";
 import Footer from "./Footer.vue";
 import { Todo } from "@/Models/Todo";
+import { Contact } from "@/Models/Contact";
 
 @Options({
   components: {
