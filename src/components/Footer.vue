@@ -1,6 +1,5 @@
 <template>
   <div class="footer">
-    <h3>Contact me</h3>
     <div class="contact-div">
       <a href="/">{{ contact.name }}</a>
       <a href="/">{{ contact.phone }}</a>
