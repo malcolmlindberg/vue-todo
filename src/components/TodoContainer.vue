@@ -105,6 +105,7 @@ input.complete {
   &:hover {
     background-color: black;
     color: white;
+    transform: scale(1.1);
   }
 }
 h1 {

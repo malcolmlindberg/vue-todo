@@ -1,11 +1,13 @@
 <template>
-  <TodoContainer />
-  <Footer :contact="me" />
+  <Loader v-if="isLoading" />
+  <TodoContainer v-if="complete" />
+  <Footer :contact="me" v-if="foot" />
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Footer from "./components/Footer.vue";
+import Loader from "./components/Loader.vue";
 import TodoContainer from "./components/TodoContainer.vue";
 import { Contact } from "./Models/Contact";
 
@@ -13,12 +15,25 @@ import { Contact } from "./Models/Contact";
   components: {
     TodoContainer,
     Footer,
+    Loader,
   },
 })
 export default class App extends Vue {
+  isLoading = true;
+  complete = false;
+  foot = false;
+
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = !this.isLoading;
+      this.complete = !this.isLoading;
+      this.foot = !this.isLoading;
+    }, 2000);
+  }
+
   me: Contact = new Contact(
     "Malcolm Lindberg",
-    29291821728,
+    +46709891220,
     "Malcolm.lindberg@hotmail.se"
   );
 }
@@ -55,7 +70,6 @@ body {
   height: 400px;
   margin-left: 25%;
   overflow: scroll;
-  box-sizing: padding-box;
 
   .container {
     display: flex;
@@ -74,7 +88,7 @@ body {
     bottom: 0;
   }
   .contact-div {
-    width: 30%;
+    width: 20%;
   }
 }
 

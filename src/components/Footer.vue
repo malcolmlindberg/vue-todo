@@ -1,10 +1,8 @@
 <template>
   <div class="footer">
-    <div class="contact-div">
-      <a href="/">{{ contact.name }}</a>
-      <a href="/">{{ contact.phone }}</a>
-      <a href="/">{{ contact.email }}</a>
-    </div>
+    <a href="/">{{ contact.name }}</a>
+    <a href="/">{{ contact.phone }}</a>
+    <a href="/">{{ contact.email }}</a>
   </div>
 </template>
 
@@ -26,24 +24,23 @@ export default class Footer extends Vue {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
 }
 .contact-div {
   display: flex;
-  flex-direction: column;
-  width: 20%;
+  flex-direction: row;
 }
 a {
   position: relative;
   text-decoration: none;
   color: white;
-  width: 100%;
   font-size: 1.3rem;
   padding: 5px;
   margin-left: 10px;
 }
 
 a:hover {
-  color: dodgerblue;
+  color: #1e90ff;
 }
 a::before {
   content: "";

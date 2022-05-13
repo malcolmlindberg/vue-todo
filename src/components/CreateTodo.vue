@@ -58,6 +58,7 @@ export default class CreateTodo extends Vue {
   &:hover {
     background-color: black;
     color: white;
+    transform: scale(1.1);
   }
 }
 </style>
